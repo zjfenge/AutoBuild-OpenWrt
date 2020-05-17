@@ -7,19 +7,19 @@
 
 name: Build_Newifi_D2
 
-on: 
+on:
+  repository_dispatch:
   release:
-    types: [published]
-
-  #push:
-  #  branches: 
-  #    - master
-
-  #schedule:
-  #  - cron: 0 8 * * 5
-  
-  #watch:
-  #  types: [started]
+    types: published
+  push:
+    branches:
+      - master
+#   paths:
+#     - '.config'
+#  schedule:
+#    - cron: 0 8 * * 5
+#  watch:
+#    types: started
 
 jobs:
   build:
