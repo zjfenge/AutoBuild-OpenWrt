@@ -73,8 +73,8 @@ jobs:
         ./scripts/feeds install -a
     - name: Configuration Customization - Build_Newifi_D2
       env:
-        CONFIG_FILE: 'Newifi_D2.config'
         SSH_ACTIONS: true
+        CONFIG_FILE: 'Newifi_D2.config'
       run: |
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x ./customize.sh && ./customize.sh
